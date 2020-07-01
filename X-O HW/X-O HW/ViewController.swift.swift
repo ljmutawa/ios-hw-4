@@ -126,7 +126,7 @@ class ViewController: UIViewController {
     var isMute = false
     var xWins = 0
     var oWins = 0
-    var currentTheme : Theme = Theme.theme4
+    var currentTheme = Theme.theme4
     let themes : [Theme] = [.theme1, .theme2, .theme3, .theme4]
     
     @IBAction func changeTheme(_ sender: Any) {
@@ -150,12 +150,9 @@ class ViewController: UIViewController {
         clicksOnTheMuteButton += 1
         if clicksOnTheMuteButton % 2 != 0 {
             isMute = true
-        } else {
-            isMute = false
-        }
-        if isMute == true {
             muteButton.setTitle("🔇", for: .normal)
         } else {
+            isMute = false
             muteButton.setTitle("🔈", for: .normal)
         }
     }
@@ -302,6 +299,7 @@ class ViewController: UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true)
     }
+    
     func makesButtonsUserInteractive() {
         b1.isUserInteractionEnabled = true
         b2.isUserInteractionEnabled = true
